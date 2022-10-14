@@ -1,0 +1,4 @@
+id,sub,target,SP
+F1-1,F,Pump__1-1__out,100
+F1-2,F,Pump__1-2__out,120
+F2-1,F,Pump__2-1__out,200

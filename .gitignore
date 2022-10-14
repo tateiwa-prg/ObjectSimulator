@@ -1,0 +1,10 @@
+/package.json
+/package-lock.json
+/LIST/*
+!/LIST/keep.gitkeep
+/node_modules
+/credential/*
+!/credential/config~sample~.json
+/log/*
+!/log/log-config.json
+/setting/device.json
