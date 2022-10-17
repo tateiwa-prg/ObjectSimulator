@@ -1,5 +1,6 @@
 /package.json
 /package-lock.json
+/Output/*
 /LIST/*
 !/LIST/keep.gitkeep
 /node_modules

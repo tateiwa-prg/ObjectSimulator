@@ -26,3 +26,49 @@ filename_arr.forEach(function (filename) {
 exports.file_set = function () {
     return file_obj;
 }
+
+const createCsvWriter = require('csv-writer').createObjectCsvWriter;
+
+exports.make_csv = function (data) {
+    //console.log("csv input data:", data);
+
+    let output_file_path = "./Output/T" + (new Date()).getTime() + '.csv'
+    let csvWriter = createCsvWriter({
+        path: output_file_path,// 保存する先のパス(すでにファイルがある場合は上書き保存)
+        header: csv_header,  // 出力する項目(ここにない項目はスキップされる)
+        //encoding:'shift_jis',
+    });
+
+    let csv_data = [];
+    Object.keys(data).forEach(function (kiki) {
+        let obj = data[kiki];
+        Object.keys(obj).forEach(function (id) {
+            let io = obj[id];
+            Object.keys(io).forEach(function (point) {
+                let bobj = io[point];
+                let wdata = {
+                    kiki: kiki,
+                    id: id,
+                    point: point,
+                    F: f = (bobj["F"] == null) ? 0 : bobj["F"],
+                    T: f = (bobj["T"] == null) ? 0 : bobj["T"],
+                    P: f = (bobj["P"] == null) ? 0 : bobj["P"],
+                };
+                csv_data.push(wdata);
+            });
+        });
+
+    });
+    //console.log(csv_data);
+    csvWriter.writeRecords(csv_data).then(() => {
+        console.log('done');
+    });
+}
+const csv_header = [
+    { id: 'kiki', title: 'kiki' },
+    { id: 'id', title: 'id' },
+    { id: 'point', title: 'point' },
+    { id: 'F', title: 'F' },
+    { id: 'T', title: 'T' },
+    { id: 'P', title: 'P' },
+];
