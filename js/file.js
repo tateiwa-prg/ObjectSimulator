@@ -3,7 +3,7 @@
 const fs = require('fs');
 const csv = require('csv');
 
-const filename_arr = ["Control", "Tee", "Pump"]
+const filename_arr = ["Control", "Tee", "Pump", "TR"]
 //#################GLOBAL end#################//
 
 var file_obj = {};
@@ -24,7 +24,11 @@ filename_arr.forEach(function (filename) {
 });
 
 exports.file_set = function () {
-    return file_obj;
+    let res = false;
+    if (Object.keys(file_obj).length >= filename_arr.length) {
+        res = file_obj;
+    }
+    return res;
 }
 
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;

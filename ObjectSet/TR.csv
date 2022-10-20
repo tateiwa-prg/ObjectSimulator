@@ -1,0 +1,3 @@
+id,TPE,TQc,SP_TWc_out,target_in,target_out,status
+1-1,120,2.4,7,Pump__1-1__out,Tee__2-1__0,1
+1-2,120,2.4,7,Pump__1-2__out,Tee__2-2__2,0

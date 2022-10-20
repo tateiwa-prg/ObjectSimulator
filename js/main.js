@@ -21,10 +21,26 @@ const enzan = require('./enzan');
 //const control_module = require('./control');
 //const pump_module = require('./pump');
 const repeat_num = 3;
+const job_interval = 2 * 1000//ms
+var file_set;
 
-var data;
 
-first_job();
+setInterval(() => {
+    job();
+}, job_interval);
+
+function job() {
+    if (!file_set) {
+        console.log("attempt to get fileset...");
+        file_set = file.file_set();
+        console.log(file_set);
+    } else {
+        console.log("normal job");
+    }
+}
+
+
+//first_job();
 
 async function first_job() {
     console.log("waiting...");

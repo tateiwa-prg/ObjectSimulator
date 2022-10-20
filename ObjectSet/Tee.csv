@@ -1,5 +1,5 @@
 id,target_0,target_1,target_2
 1-2,Tee__2-3__1,Pump__1-1__in,Pump__1-2__in
-2-1,Pump__1-1__out,Pump__2-1__in,Tee__2-2__0
-2-2,Tee__2-1__2,Tee__2-3__2,Pump__1-2__out
+2-1,TR__1-1__out,Pump__2-1__in,Tee__2-2__0
+2-2,Tee__2-1__2,Tee__2-3__2,TR__1-2__out
 2-3,Pump__2-1__out,Tee__1-2__0,Tee__2-2__1

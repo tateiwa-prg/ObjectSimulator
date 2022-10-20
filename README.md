@@ -15,12 +15,13 @@
 /ObjectSet
 ```
 
-| ファイル名  | val              |
-| ----------- | ---------------- |
-| Control.csv | 調節計の設定     |
-| Pump.csv    | ポンプの設定     |
-| Tee.csv     | チーズの設定     |
-| ~else~.csv  | update coming... |
+| ファイル名        | val                |
+| ----------------- | ------------------ |
+| Control.csv       | 調節計の設定       |
+| Pump.csv          | ポンプの設定       |
+| Tee.csv           | チーズの設定       |
+| TR.csv            | ターボ冷凍機の設定 |
+| update coming.csv | update coming...   |
 
 <br>
 
@@ -74,9 +75,22 @@
 | target_in  | str   | in側の接続先          | Tee__c2__2  |
 | target_out | str   | out側の接続先         | Tee__1-5__0 |
 | status     | bool  | 運転状態（temporary） | 0, 1        |
+
 <br>
 
+### TR.csv
+![Tee](/image/TR.png)
+| key        | type  | 説明                  | 例          |
+| ---------- | ----- | --------------------- | ----------- |
+| id         | str   | ターボ冷凍機のID      | 5           |
+| TPE        | float | 定格消費電力          | 195.2       |
+| TQc        | float | 定格能力              | 2.4         |
+| SP_TWc_out | float | 冷水出口温度設定      | 7           |
+| target_in  | str   | in側の接続先          | Tee__c2__2  |
+| target_out | str   | out側の接続先         | Tee__1-5__0 |
+| status     | bool  | 運転状態（temporary） | 0, 1        |
 
+<br>
 
 ## 計算実行
 main.bat ダブルクリック
@@ -94,5 +108,5 @@ main.bat ダブルクリック
 <br>
 
 ## デフォルト設定の系統図
-![Def](/image/Def.png)
+![Def](/image/Def2.png)
 
