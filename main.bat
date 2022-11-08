@@ -4,7 +4,8 @@ rem test
 
 echo !!!!!!!!!!!!!!!!BAT START!!!!!!!!!!!!!!!!
 
-node ./js/main.js
+rem node ./js/main.js
+node ./v1/main.js
 
 echo !!!!!!!!!!!!!!!!BAT FINISH!!!!!!!!!!!!!!!!
 
